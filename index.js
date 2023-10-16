@@ -9,6 +9,20 @@ function hasTargetSum(array, target) {
 /* 
   Add your pseudocode here
 */
+function hasTargetSum(arr, target) {
+  const complements = new Set();
+
+  for (const num of arr) {
+      const complement = target - num;
+      if (complements.has(complement)) {
+          return true;
+      }
+      complements.add(num);
+  }
+
+  return false;
+}
+
 
 /*
   Add written explanation of your solution here
